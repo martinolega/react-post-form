@@ -1,0 +1,37 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-card
+{
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.bt-none
+{
+    border-top: none;
+}
+
+.bg-1
+{
+    background-color: rgb(248, 200, 228);
+}
+
+.bg-2
+{
+    background-color: rgb(208, 248, 200);
+}
+
+.bg-3
+{
+    background-color: rgb(200, 205, 248);
+}
+
+.bg-4
+{
+    background-color: rgb(248, 241, 200);
+}

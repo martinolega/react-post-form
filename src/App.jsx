@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import ArticleList from "./components/ArticleList";
 
 /*
 Dati richiesti dal form:
@@ -21,8 +22,6 @@ function App() {
   const [formData, setFormData] = useState(initialFormData);
   const [arrayArticles, setArrayArticles] = useState([]);
 
-  let i = 0;
-
   function addArticle(event) {
     event.preventDefault();
     if (formData.author != "" && formData.title != "" && formData.body != "")
@@ -31,7 +30,6 @@ function App() {
       const newArray = [...arrayArticles, newElement];
       setArrayArticles(newArray);
       setFormData(initialFormData);
-      console.log(newArray);
     }
   }
 
@@ -108,18 +106,9 @@ function App() {
               <br />
               <button type="submit" className="btn btn-primary">Invia</button>
             </form>
-            {
-              arrayArticles.map((article) => (
-                <div key={i++}>
-                  <br />
-                  <h1>{article.title}</h1>
-                  <p>Author: {article.author}</p>
-                  <p>Public: {article.public === true ? "isPublic" : "Private"}</p>
-                  <p>{article.body}</p>
-                  <br />
-                </div>
-              ))
-            }
+            <br />
+            <ArticleList 
+            array = {arrayArticles}/>
           </div>
         </div>
       </div>
